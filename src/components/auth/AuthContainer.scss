@@ -16,7 +16,7 @@
   height: 100%;
   padding: 4rem 1rem;
   background-color: var(--color-primary);
-  animation: slide-down 0.5s ease;
+  animation: slide-down 0.8s ease;
 }
 
 @keyframes slide-down {
@@ -40,7 +40,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  animation: slide-up 1s ease;
+  animation: slide-up 0.8s ease;
 }
 
 @keyframes slide-up {
@@ -103,7 +103,7 @@ form a {
 }
 .show-indicator {
   display: block;
-  animation: slide-up 1s ease;
+  animation: slide-up 0.8s ease;
 }
 
 .pass-green {

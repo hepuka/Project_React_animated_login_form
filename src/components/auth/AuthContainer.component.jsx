@@ -6,14 +6,24 @@ import Register from "./Register.component";
 import Reset from "./Reset.component";
 
 const AuthContainer = () => {
+  /* együtt módosítja a 3 értéket, setsetAuth-ban egyenként kell megadni a kulcsok értékeit
+  
+  ({ login: true, register: false, reset: false }); 
+  
+  */
+
   const [auth, setAuth] = useState({
     login: true,
     register: false,
     reset: false,
   });
-  /* const [login, setLogin] = useState(true);
+
+  /* ezt a 3 useState-et tudom egy state-el kezeleni 
+  
+  const [login, setLogin] = useState(true);
   const [register, setRegister] = useState(false);
   const [reset, setReset] = useState(false);
+  
  */
 
   const [showPassword, setShowPassword] = useState(false);

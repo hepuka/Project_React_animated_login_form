@@ -71,7 +71,6 @@ const Register = ({ onLogin, onShowPassword, onTogglePassword }) => {
           <input type="text" className="--width-100" placeholder="Username" />
           <input type="email" className="--width-100" placeholder="Email" />
 
-          {/* password field */}
           <div className="password">
             <input
               type={onShowPassword ? "text" : "password"}

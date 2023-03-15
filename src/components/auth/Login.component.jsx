@@ -15,11 +15,15 @@ const Login = ({ onRegister, onReset, onTogglePassword, onShowPassword }) => {
 
           <div className="password">
             <input
+              /* state állapotától függ, hogy milyen az input típusa */
               type={onShowPassword ? "text" : "password"}
               className="--width-100"
               placeholder="Password"
             />
+
+            {/* eseménykezelő gomb a onTogglePassword függvényre ami az onShowPassword értékét módosítja*/}
             <span className="icon" onClick={onTogglePassword}>
+              {/* state állapotától függ, hogy pontokat mutat vagy a jelszót */}
               {onShowPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
             </span>
           </div>
@@ -29,7 +33,7 @@ const Login = ({ onRegister, onReset, onTogglePassword, onShowPassword }) => {
             Forgot password
           </a>
           <span className="--text-sm --block">
-            Don't have an account?{" "}
+            Don't have an account?
             <a href="#" className="--text-sm" onClick={onRegister}>
               Register
             </a>
