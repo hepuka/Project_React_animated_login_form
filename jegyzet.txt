@@ -1,0 +1,46 @@
+AuthContainer komponens:
+
+ezt a 3 useState-et tudom egy state-el kezeleni   
+  const [login, setLogin] = useState(true);
+  const [register, setRegister] = useState(false);
+  const [reset, setReset] = useState(false);  
+
+
+így:
+  const [auth, setAuth] = useState({
+    login: true,
+    register: false,
+    reset: false,
+  });
+
+
+- mindhárom komponensnél ha a login,register,vagy a reset state true, akkor jelenik meg a komponens. A gombok függvényeivel ezeket a boolean értékeket változtatom a state-ben
+
+- handlelogin, handleregister és a handlereset függvényekkel módosítom a state 3 komponensét setAuth({ login: true, register: false, reset: false });
+
+- handleTogglePaswword függvénnyel a showPassword state állapotát változtatom. A showPassport state értékét tagadom mindenegyes gombnyomáskor
+
+- ezeket a függvényeket adom át a komponenseknek
+
+
+
+Login komponens:
+
+- a komponens megkapja az onRegister függvényt, amit a register gombnak adok át. ez a gomb a függvénnyel módosítja az AuthContainer komponens handleRegister state-jét
+
+- a komponens megkapja az onReset függvényt, amit a reset gombnak adok át. ez a gomb a függvénnyel módosítja az AuthContainer komponens handleReset state-jét
+
+- a komponens megkapja az onTogglePassword függvényt, amit a password mezőben lévő gomnak adok át. A gomb handleTogglePaswword függvénnyel módosítja az AuthContainer komponens showPassword state-jét. Az onShowPassword propson keresztül megkapja, hogy ha true akkor a AiOutlineEyeInvisible, és ha false akkor a AiOutlineEye ikon jelenik meg a gomb helyén.
+
+
+Register komponens:
+
+- a komponens megkapja az onLogin függvényt, amit a login gombnak adok át. ez a gomb a függvénnyel módosítja az AuthContainer komponens handleRegister state-jét
+
+- a komponens megkapja az onTogglePassword függvényt, amit a password mezőben lévő gomnak adok át. A gomb handleTogglePaswword függvénnyel módosítja az AuthContainer komponens showPassword state-jét. Az onShowPassword propson keresztül megkapja, hogy ha true akkor a AiOutlineEyeInvisible, és ha false akkor a AiOutlineEye ikon jelenik meg a gomb helyén.
+
+- a jelszó mezőre készítek egy handlePasswordChange függvényt ami a mező onchange metódusára hívok meg. A függvény a setPass(e.target.value)-al beállítja a pass state értékét. A pass-ba rakja bele amit begépelek a mezőbe. Majd a mező value értékének átadom ezt a state-et
+
+a jelszó mező onFocus metódusára meghívom a handleShowIndicator függvényt ami akkor hívódik meg ha belekattintok a mezőbe. A függvény a komponens setShowIndicator state-jét teszi true-ra, és megjelenik a Password Strength Indicator mező. 106.sor
+
+- pass, passLetter, passNumber, passChar, passLength értékei változnak true-ra kkor megváltozik az indikátor sorai is zöldre. A pass tate-be beírt karaktereket elemzi

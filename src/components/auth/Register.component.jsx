@@ -6,9 +6,7 @@ import { FaCheck } from "react-icons/fa";
 
 const Register = ({ onLogin, onShowPassword, onTogglePassword }) => {
   const [showIndicator, setShowIndicator] = useState(false);
-
   const [pass, setPass] = useState("");
-
   const [passLetter, setPassLetter] = useState(false);
   const [passNumber, setPassNumber] = useState(false);
   const [passChar, setPassChar] = useState(false);
